@@ -1,29 +1,31 @@
 # Pet Clinic Management
 
-This program is used to manage a pet
+This is a Java Application used to manage a Pet Clinic
 
-## Installation
+## Functionalities
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+The application displays a menu of options from which the user can access and manipulate the database.
 
-```bash
-pip install foobar
-```
+It doesn't have an interface, it runs in the console in a Java compatible IDE.
 
-## Usage
 
-```python
-import foobar
+## Requirements
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
+- Java version 8
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- Maven version 4
 
-Please make sure to update tests as appropriate.
+- Database version 8
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+
+## Project Structure
+
+The project contains 2 folders: 
+- folder "dao" contains the classes that have all the methods responsable for manipulating the database.
+- folder "model" contains the classes that model the database.
+
+Above these folders there is one class containing the connection settings and the main class from where the application executes.
+
+
+## How to run
+Build project (Ctrl + F9) then Run (Shift + F10) in Main class.
