@@ -1,8 +1,10 @@
 package com.sda.petclinicmanagement.dao;
 
 import com.sda.petclinicmanagement.HibernateUtils;
+import com.sda.petclinicmanagement.model.Consult;
 import com.sda.petclinicmanagement.model.Veterinarian;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -11,7 +13,11 @@ public class VeterinarianDao extends VetAndPetDao<Veterinarian> {
     public List<Veterinarian> getAllVeterinarians() {
         try {
             Session session = HibernateUtils.getSessionFactory().openSession();
-            return session.createQuery("from Veterinarian", Veterinarian.class).list();
+            Query<Veterinarian> query = session.createQuery("from Veterinarian", Veterinarian.class);
+//            Pagination  methods below
+//            query.setFirstResult(2);
+//            query.setMaxResults(2);
+            return query.list();
         } catch (Exception ex) {
             ex.printStackTrace();
             return null;

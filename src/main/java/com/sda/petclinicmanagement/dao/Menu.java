@@ -79,7 +79,7 @@ public class Menu {
     }
 
     public void showAllVets() {
-        System.out.println("These are all the veterinarians:\n");
+        System.out.println("These are all the veterinarians:");
         System.out.println(vetDao.getAllVeterinarians());
         System.out.println("Returning to the options menu..");
         displayMenu();
@@ -87,7 +87,7 @@ public class Menu {
     }
 
     public void showAllPets() {
-        System.out.println("These are all the pets:\n");
+        System.out.println("These are all the pets:");
         System.out.println(petDao.getAllPets());
         System.out.println("Returning to the options menu..");
         displayMenu();
@@ -95,7 +95,7 @@ public class Menu {
     }
 
     public void showAllConsults() {
-        System.out.println("These are all the consults:\n");
+        System.out.println("These are all the consults:");
         System.out.println(consultDao.getAllConsults());
         System.out.println("Returning to the options menu..");
         displayMenu();
@@ -132,7 +132,7 @@ public class Menu {
         System.out.print("Please enter the id of the consult you want to update the description: ");
         id = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Please write the new description of the consult:");
+        System.out.print("Please write the new description of the consult: ");
         String description = scanner.nextLine();
         consultDao.updateConsultDescription(consultDao.findById(id), description);
         System.out.println("The description of the consult with the id " + " has been successfully updated with the new description\n" +
@@ -183,7 +183,7 @@ public class Menu {
             petList.add(petDao.findById(scanner.nextInt()));
             scanner.nextLine();
             System.out.println("Pet successfully added to list");
-            System.out.println("Do you wish to add another pet? (y/n");
+            System.out.println("Do you wish to add another pet? (y/n)");
             yesOrNo = scanner.nextLine().toLowerCase();
         } while (yesOrNo.equals("y"));
         vet.setPets(petList);
@@ -194,7 +194,7 @@ public class Menu {
             consultList.add(consultDao.findById(scanner.nextInt()));
             System.out.println("Consult successfully added to list");
             scanner.nextLine();
-            System.out.println("Do you wish to add another consult? (y/n");
+            System.out.println("Do you wish to add another consult? (y/n)");
             yesOrNo = scanner.nextLine().toLowerCase();
         } while (yesOrNo.equals("y"));
         vet.setConsults(consultList);
@@ -291,18 +291,18 @@ public class Menu {
         pet.setOwnerName(scanner.nextLine());
         System.out.println("Here is a list of all the veterinarians:");
         System.out.println(vetDao.getAllVeterinarians());
-        System.out.print("Please select the veterinarian you want to associate with the pet by entering the id");
+        System.out.print("Please select the veterinarian you want to associate with the pet by entering the id: ");
         pet.setVeterinarian(vetDao.findById(scanner.nextInt()));
         List<Consult> consultList = new ArrayList<>();
         String yesOrNo;
         do {
             System.out.println("Here is a list of all the consults:");
             System.out.println(consultDao.getAllConsults());
-            System.out.println("Please select the consult you want to add by entering the consult id");
+            System.out.print("Please select the consult you want to add by entering the consult id: ");
             consultList.add(consultDao.findById(scanner.nextInt()));
             scanner.nextLine();
             System.out.println("Consult successfully added to list");
-            System.out.println("Do you wish to add another consult? (y/n");
+            System.out.println("Do you wish to add another consult? (y/n)");
             yesOrNo = scanner.nextLine().toLowerCase();
         } while (yesOrNo.equals("y"));
         pet.setConsults(consultList);
@@ -315,7 +315,7 @@ public class Menu {
     public void updatePet() {
         System.out.println("Here is a list of all the pets in the database:");
         System.out.println(petDao.getAllPets());
-        System.out.println("Please select the pet you want to update by entering the id");
+        System.out.print("Please select the pet you want to update by entering the id: ");
         Pet pet = petDao.findById(scanner.nextInt());
         System.out.print("Please select what field you want to update by selecting the number before it:\n" +
                 "1. Race\n" +

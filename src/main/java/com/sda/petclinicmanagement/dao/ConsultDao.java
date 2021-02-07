@@ -2,10 +2,9 @@ package com.sda.petclinicmanagement.dao;
 
 import com.sda.petclinicmanagement.HibernateUtils;
 import com.sda.petclinicmanagement.model.Consult;
-import com.sda.petclinicmanagement.model.Veterinarian;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import org.hibernate.query.Query;
 import java.util.List;
 
 public class ConsultDao {
@@ -13,7 +12,11 @@ public class ConsultDao {
     public List<Consult> getAllConsults() {
         try {
             Session session = HibernateUtils.getSessionFactory().openSession();
-            return session.createQuery("from Consult", Consult.class).list();
+            Query<Consult> query = session.createQuery("from Consult", Consult.class);
+//            Pagination  methods below
+//            query.setFirstResult(2);
+//            query.setMaxResults(2);
+            return query.list();
         } catch (Exception ex) {
             ex.printStackTrace();
             return null;

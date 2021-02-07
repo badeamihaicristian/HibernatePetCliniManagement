@@ -26,6 +26,9 @@ The project contains 2 folders:
 
 Above these folders there is one class containing the connection settings and the main class from where the application executes.
 
+The project also implements other Java Advanced features, like Generic types, Enums, Encapsulation, Lists,
+Exceptions and Abstract classes.
+
 
 ## How to run
 Build project (Ctrl + F9) then Run (Shift + F10) in Main class.
